@@ -5,9 +5,13 @@ import java.util.ConcurrentModificationException;
 import java.util.List;
 
 import javax.inject.Named;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 
 @Named("addressBookImpl")
+@Entity
+@Table(name="addressbook")
 public class AddressBookImpl implements AddressBook{
 	
 	private List<Contact> contacts;

@@ -1,6 +1,12 @@
 package com.interview.problem.addressbook.core;
 
 import javax.inject.Named;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -9,6 +15,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder={"name","lName","address","contactInfo"})
 @Named("contact")
 public class Contact {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column
+	private long id;
 	
 	private String name;
 	
