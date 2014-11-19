@@ -1,6 +1,8 @@
 package com.interview.problem.addressbook.core;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
@@ -13,7 +15,8 @@ public class AddressBookImpl implements AddressBook{
 	private List<Contact> contacts;
 	
 	public AddressBookImpl(){
-		contacts = new ArrayList<Contact>();
+//		contacts = new ArrayList<Contact>();
+		contacts = Collections.synchronizedList(new ArrayList<Contact>());
 	}
 	
 	/**
@@ -38,11 +41,14 @@ public class AddressBookImpl implements AddressBook{
 	 * @throws IllegalStateException, ConcurrentModificationException
 	 */
 	public boolean updateContact(Contact contact) throws IllegalStateException, ConcurrentModificationException{
-		ContactsIterator iterator = getIterator();
-		while(iterator.hasNext()){
-			if(equals(iterator.next(),contact)){
-				iterator.update(contact);
-				return true;
+		synchronized (contacts) {
+			
+			ContactsIterator iterator = getIterator();
+			while(iterator.hasNext()){
+				if(equals(iterator.next(),contact)){
+					iterator.update(contact);
+					return true;
+				}
 			}
 		}
 		return false;
@@ -56,11 +62,13 @@ public class AddressBookImpl implements AddressBook{
 	 */
 	public boolean removeContact(Contact contact) throws IllegalStateException, ConcurrentModificationException{
 		//TODO handle Exceptions/unsuccessful removal in better way
-		ContactsIterator iterator = getIterator();
-		while(iterator.hasNext()){
-			if(equals(iterator.next(),contact)){
-				iterator.remove();
-				return true;
+		synchronized (contacts) {
+			ContactsIterator iterator = getIterator();
+			while(iterator.hasNext()){
+				if(equals(iterator.next(),contact)){
+					iterator.remove();
+					return true;
+				}
 			}
 		}
 		return false;
@@ -73,11 +81,13 @@ public class AddressBookImpl implements AddressBook{
 	 */
 	public Contact getContact(Contact contact) {	
 		//TODO improve to accept only firstName and LastName
-		ContactsIterator iterator = getIterator();
-		while(iterator.hasNext()){
-			Contact currentCon = iterator.next();
-			if(equals(currentCon,contact)){
-				return currentCon;
+		synchronized (contacts) {
+			ContactsIterator iterator = getIterator();
+			while(iterator.hasNext()){
+				Contact currentCon = iterator.next();
+				if(equals(currentCon,contact)){
+					return currentCon;
+				}
 			}
 		}
 		return null;
