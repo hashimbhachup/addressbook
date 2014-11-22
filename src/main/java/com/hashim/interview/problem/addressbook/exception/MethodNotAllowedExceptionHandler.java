@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.exception;
+package com.hashim.interview.problem.addressbook.exception;
 
 import javax.ws.rs.NotAllowedException;
 import javax.ws.rs.core.MediaType;
@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
-import com.interview.problem.addressbook.core.AddressBookResponse;
+import com.hashim.interview.problem.addressbook.core.AddressBookResponse;
 
 @Provider
 public class MethodNotAllowedExceptionHandler implements ExceptionMapper<NotAllowedException>{

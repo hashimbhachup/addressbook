@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.test;
+package com.hashim.interview.problem.addressbook.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,8 +8,6 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
-import junit.framework.Assert;
 
 import org.jboss.resteasy.core.Dispatcher;
 import org.jboss.resteasy.plugins.server.tjws.TJWSEmbeddedJaxrsServer;
@@ -26,13 +24,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.interview.problem.addressbook.core.Address;
-import com.interview.problem.addressbook.core.AddressBookResponse;
-import com.interview.problem.addressbook.core.Contact;
-import com.interview.problem.addressbook.core.ContactInfo;
-import com.interview.problem.addressbook.exception.MethodNotAllowedExceptionHandler;
-import com.interview.problem.addressbook.exception.ResourceNotFoundException;
-import com.interview.problem.addressbook.resource.AddressBookResImpl;
+import com.hashim.interview.problem.addressbook.core.Address;
+import com.hashim.interview.problem.addressbook.core.AddressBookResponse;
+import com.hashim.interview.problem.addressbook.core.Contact;
+import com.hashim.interview.problem.addressbook.core.ContactInfo;
+import com.hashim.interview.problem.addressbook.exception.MethodNotAllowedExceptionHandler;
+import com.hashim.interview.problem.addressbook.exception.ResourceNotFoundException;
+import com.hashim.interview.problem.addressbook.resource.AddressBookResImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:service-app-context.xml"})

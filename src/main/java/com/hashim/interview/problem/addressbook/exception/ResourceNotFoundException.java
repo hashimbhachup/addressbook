@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.exception;
+package com.hashim.interview.problem.addressbook.exception;
 
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.MediaType;
@@ -6,7 +6,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 
-import com.interview.problem.addressbook.core.AddressBookResponse;
+import com.hashim.interview.problem.addressbook.core.AddressBookResponse;
 
 public class ResourceNotFoundException implements ExceptionMapper<NotFoundException>{
 

@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.data;
+package com.hashim.interview.problem.addressbook.data;
 
 import java.util.ConcurrentModificationException;
 import java.util.List;
@@ -7,8 +7,8 @@ import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.interview.problem.addressbook.core.AddressBookImpl;
-import com.interview.problem.addressbook.core.Contact;
+import com.hashim.interview.problem.addressbook.core.AddressBookImpl;
+import com.hashim.interview.problem.addressbook.core.Contact;
 
 /**
  * @author hassingh

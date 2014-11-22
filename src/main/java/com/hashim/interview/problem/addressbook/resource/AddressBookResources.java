@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.resource;
+package com.hashim.interview.problem.addressbook.resource;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -14,11 +14,11 @@ import javax.ws.rs.core.Response;
 
 import org.springframework.stereotype.Service;
 
-import com.interview.problem.addressbook.core.Contact;
+import com.hashim.interview.problem.addressbook.core.Contact;
 
 
 @Service(value="addressBookService")
-@Path("/addressbook/contact")
+@Path("/addressbook")
 public interface AddressBookResources {
 	
 	@POST
@@ -39,7 +39,7 @@ public interface AddressBookResources {
 	public Response getAll();
 	
 	
-	@DELETE
+	@GET
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	@Path("/contact")
 	public Response get(@QueryParam("Name") String name,@QueryParam("lName") String lName);
@@ -49,5 +49,5 @@ public interface AddressBookResources {
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	@Path("/contact/{name}")
-	public Response delete(@PathParam("Name") String name,@QueryParam("lName") String lName);
+	public Response delete(@PathParam("name") String name,@QueryParam("lName") String lName);
 }

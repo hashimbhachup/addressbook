@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.core;
+package com.hashim.interview.problem.addressbook.core;
 
 import java.util.ConcurrentModificationException;
 import java.util.List;

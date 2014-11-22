@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.resource;
+package com.hashim.interview.problem.addressbook.resource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +19,9 @@ import javax.ws.rs.core.Response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.interview.problem.addressbook.core.AddressBookResponse;
-import com.interview.problem.addressbook.core.Contact;
-import com.interview.problem.addressbook.data.Processor;
+import com.hashim.interview.problem.addressbook.core.AddressBookResponse;
+import com.hashim.interview.problem.addressbook.core.Contact;
+import com.hashim.interview.problem.addressbook.data.Processor;
 
 
 /**

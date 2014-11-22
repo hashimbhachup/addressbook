@@ -1,4 +1,4 @@
-package com.interview.problem.addressbook.exception;
+package com.hashim.interview.problem.addressbook.exception;
 
 public class DuplicateRecordException extends AddressBookException{
 
