@@ -53,14 +53,14 @@ public class AddressBookResImpl implements AddressBookResources{
 		AddressBookResponse addressBookResponse = new AddressBookResponse();
 		
 		
-		contact.setName(name);
+//		contact.setName(name);
 		if(processor.add(contact)){
 			addressBookResponse.setCode(Status.CREATED);
 			addressBookResponse.setMessage("Success");
 		}else{
 			addressBookResponse.setCode(Status.CONFLICT);
-			addressBookResponse.setMessage("contact for " + contact.getName() 
-					+ " "+ contact.getlName() + " already exists");
+//			addressBookResponse.setMessage("contact for " + contact.getName() 
+//					+ " "+ contact.getlName() + " already exists");
 		}
 		return Response.ok().entity(addressBookResponse).build();
 	}

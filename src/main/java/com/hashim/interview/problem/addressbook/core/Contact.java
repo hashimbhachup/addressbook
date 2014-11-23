@@ -1,35 +1,52 @@
 package com.hashim.interview.problem.addressbook.core;
 
+import java.util.Date;
+
 import javax.inject.Named;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name ="contact")
-@XmlType(propOrder={"name","lName","address","contactInfo"})
+@XmlType(propOrder={"name","lName","addedDate","address","contactInfo"})
 @Named("contact")
+@Entity(name="contact")
 public class Contact {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
-	private long id;
+	@GeneratedValue
+	private int id;
 	
 	private String name;
 	
 	
 	private String lName;
 	
+	@Embedded
 	private Address address;
 	
+	@Embedded
 	private ContactInfo contactInfo;
+	
+	@Column(name="added_date")
+	private Date addedDate;
+	
+	@XmlTransient
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -61,6 +78,14 @@ public class Contact {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public Date getAddedDate() {
+		return addedDate;
+	}
+
+	public void setAddedDate(Date addedDate) {
+		this.addedDate = addedDate;
 	}
 	
 }

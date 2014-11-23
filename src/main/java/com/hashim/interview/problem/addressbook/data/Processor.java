@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hashim.interview.problem.addressbook.core.AddressBookImpl;
 import com.hashim.interview.problem.addressbook.core.Contact;
+import com.hashim.interview.problem.addressbook.dto.ContactDao;
+import com.hashim.interview.problem.addressbook.dto.ContactDaoImpl;
 
 /**
  * @author hassingh
@@ -19,14 +21,20 @@ public class Processor {
 	@Autowired
 	private AddressBookImpl addressBookImpl;
 	
+	@Autowired
+	private ContactDao contactDao;
+	
 	
 	public boolean add(Contact contact){	
-		return addressBookImpl.addContact(contact);
+//		return addressBookImpl.addContact(contact);
+		contactDao.insert(contact);
+		return true;
 	}
 	
 	
 	public List<Contact> pullAllRecords(){
-		return addressBookImpl.getAllContacts();
+//		return addressBookImpl.getAllContacts();
+		return contactDao.getAllContacts();
 	}
 	
 	public boolean update(Contact contact){

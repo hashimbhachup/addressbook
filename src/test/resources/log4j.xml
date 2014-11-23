@@ -20,7 +20,7 @@
 	
 	<!-- root logger -->
 	<root>
-		<priority value="INFO" />
+		<priority value="ERROR" />
 		<appender-ref ref="stdout" />
 	</root>
 </log4j:configuration>

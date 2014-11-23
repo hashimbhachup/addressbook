@@ -1,18 +1,26 @@
 package com.hashim.interview.problem.addressbook.core;
 
 import javax.inject.Named;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 @Named("address")
+@Embeddable
 public class Address{
 	
+	@Column(name="street_name")
 	private String steetName ;
 	
+	@Column(name="street_number")
 	private int streetNumber;
 	
+	@Column(name="postal_code")
 	private String postalCode;
 	
+	@Column(name="city")
 	private String city;
 	
+	@Column(name="country")
 	private String country;
 
 	public String getSteetName() {
